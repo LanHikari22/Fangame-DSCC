@@ -1,0 +1,619 @@
+<DSCC_Dialog>
+
+<text> Mid-August... </text>
+
+<text> 
+The summer of your second
+year of high school is almost over. 
+</text>
+
+<text> 
+People visiting Tokyo have
+begun traveling back home. 
+</text>
+
+<text> 
+It feels as if there are fewer
+people about in shibuya... 
+</text>
+
+<left char="Hero" emotion="neutral" />
+<text>
+Your cousin Naoya, with whom
+you'd been living until a few
+</text>
+
+<text>
+years ago, suddenly called for
+you to meet him outside 901...
+</text>
+
+<text name="Boy">
+Hey, {HeroName}!
+Over here!
+</text>
+
+<text>
+A boy carrying a laptop
+computer runs up to you.
+</text>
+
+<right char="Atsuro" emotion="happy" />
+<pause />
+<left emotion="happy" />
+<text name="Atsuro">
+Yo, how's it going?
+</text>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+Real nice of Noaya to make us
+meet him outside on a hot day
+like this, isn't it?
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+So, how's your summer been? We
+usually meet at school, so it
+feels like it's been forever.
+</text>
+
+<text name="Atsuro">
+is everything good?
+</text>
+
+<choice direction="left" c1="Yeah." c2="Not really.">
+
+<c1>
+	<right emotion="excited" />
+	<text name="Atsuro">
+	Ah, that's the {HeroName}
+	I know! Young guys like us
+	need to be full of energy!
+	</text>
+
+	<right emotion="happy" />
+	<text name="Atsuro">
+	Still, I couldn't think of
+	anything to do, so I spent all
+	day on my laptop. Haha!
+	</text>
+</c1>
+
+<c2>
+	<left emotion="neutral" />
+	<pause />
+	<right emotion="neutral" />
+	<text name="Atsuro">
+	Uh-oh... Did something happen?
+	</text>
+
+	<right emotion="happy" />
+	<text name="Atsuro">
+	Well, I couldn't think of
+	anything to do, so I spent all
+	day on my laptop. Haha!
+	</text>
+</c2>
+</choice>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+This is great timing though,
+man. I just ran into this
+problem with my coding.
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+It has me completely stumped,
+so I was about to go ask Naoya
+if he could help...
+</text>
+
+<text name="Girl">
+Oh, there you are!
+I've been looking for
+you guys!
+</text>
+
+<left char="Yuzu" emotion="neutral" />
+<pause />
+<right emotion="excited" />
+<text name="Atsuro">
+Hey, here comes Yoohoo!
+</text>
+
+<left emotion="angry" />
+<text name="Yuzu">
+Don't call me "Yoohoo"
+</text>
+
+<text name="Yuzu">
+My name is [Y:Yuzu]!
+Sheesh, will you stop calling
+me that stupid nickname!?
+</text>
+
+<text name="Yuzu">
+Even boys at school call me
+"Yoohoo," and it's your fault!
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+Hehe, it's not that bad,
+is it?
+</text>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+It's a friendly nickname!
+</text>
+
+<text name="Atsuro">
+And it's not ust our class.
+Some of the teachers actually
+think your name is "Yoohoo."
+</text>
+
+<text name="Yuzu">
+That's because people like
+you keep calling me that!
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+Haha, it's working!
+</text>
+
+<choice direction="right" fallthrough="true" c1="Will you cut it out?" c2="Where's Noaya?">
+
+<c1>
+	<left emotion="sad" />
+	<text name="Yuzu">
+	He keeps calling me "Yoohoo"...!
+	</text>
+</c1>
+
+</choice>
+
+<left emotion="neutral" />
+<text name="Yuzu">
+Huh...?
+Oh, that's right!
+</text>
+
+<text name="Yuzu">
+I ran into Naoya a moment ago,
+and he asked me to give these
+to Atsuro and you.
+</text>
+
+<text name="Yuzu">
+He said that something's come 
+up and he won't be able to 
+make it.
+</text>
+
+<right char="Atsuro" emotion="sad" />
+<text name="Atsuro">
+Aww, what's up with that?
+Naoya stood us up! Wait, what did
+he want you to give us?
+</text>
+
+<right char="hero" emotion="surprised" />
+<text name="Yuzu">
+Here, take them.
+They were a pain to carry
+around in my bag, too.
+</text>
+
+<text> Yuzu opens her bag... </text>
+<image link="COMPS" />
+<choice direction="right" c1="They're game systems." c2="Naoya gave you these?">
+<c1>
+	<left emotion="neutral" />
+	<text name="Yuzu">
+	Aren't these those 
+	[Y:Communication Player] things?
+	</text>
+</c1>
+
+<c2>
+	<left emotion="neutral" />
+	<text name="Yuzu">
+	Yep. Aren't these those 
+	[Y:Communication Player] things?
+	</text>
+</c2>
+
+</choice>
+
+<text name="Yuzu">
+I've seen commercials for them
+before. They're like, "Play
+with people around the world!"
+</text>
+
+<right char="Atsuro" emotion="neutral" />
+<text name="Atsuro">
+Oh, you know about them,
+Yoohoo? That's exactly what these are
+</text>
+
+<text name="Atsuro">
+The name "Communication Player"
+is a real mouthful, so people
+just call them COMPS.
+</text>
+
+<text name="Atsuro">
+They have email and a web
+browser, so they're more like
+cellphones than game systems.
+</text>
+
+<text name="Yuzu">
+Huh... Is that so?
+</text>
+
+<left emotion="angry" />
+<text name="Yuzu">
+Naoya said, "You'll all need
+these. Don't let go of them."
+</text>
+
+<left emotion="neutral" />
+<right emotion="excited" />
+<text name="Atsuro">
+Eh? "You'll all need"...?
+Well, there are three of them.
+</text>
+
+<image activated="false" />
+<right emotion="neutral" />
+<text name="Atsuro">
+...Still, why would we need
+these? I mean, I've got a
+COMP back at my own-- Huh?
+</text>
+
+<image link="blue COMP" />
+<right emotion="serious" />
+<text>
+Atsuro opens one of the COMPs
+and stares at it in wonder...
+</text>
+
+<right emotion="sad" />
+<text name="Atsuro">
+What the...?
+I've never seen this menu.
+Did he homebrew this?
+</text>
+
+<text name="Yuzu">
+What...? Do you mean he
+made this himself? Is that
+even possible?
+</text>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+Huh? Don't you know, Yoohoo?
+Naoya's famous among us
+programmers. He's a genius!
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+Something like this would be
+no problem for him.
+</text>
+
+<left emotion="surprised" />
+<text name="Yuzu">
+Huh... I had no idea.
+Is he really that good?
+</text>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+Hmm... I can't open this
+folder. Looks like it's
+protected...
+</text>
+
+<left emotion="neutral" />
+<text name="Yuzu">
+Protected...?
+</text>
+
+<text name="Yuzu">
+You mean, it's set so other
+people can't mess with it?
+We can't look inside, then.
+</text>
+
+<choice direction="right" c1="Just remove the lock." c2="Atsuro can crack it.">
+<c1> </c1>
+<c2>
+	<right emotion="happy" />
+	<pause />
+</c2>
+</choice>
+
+<right char="Atsuro" emotion="happy" />
+<text name="Atsuro">
+Heh heh, that's right!
+Good thing I brought my
+laptop along...
+</text>
+
+<text>
+Atsuro connects the
+COMP to his laptop and
+begins typing furiously...
+</text>
+
+<left emotion="surprised" />
+<text name="Yuzu">
+...Huh!?
+H-Hey, Atsuro!
+What're you doing!?
+</text>
+
+<right emotion="neutral" />
+<text name="Atsuro">
+Heh heh! What does it
+look like? I'm gonna hack
+this folder wide open.
+</text>
+
+<left emotion="angry" />
+<text name="Yuzu">
+You're hacking it...?
+Hey, Naoya's gonna be
+angry if you do that!
+</text>
+
+<choice direction="right" c1="It's not a big deal." c2="We'd better not, then.">
+
+<c1>
+	<left emotion="sad" />
+	<text name="Yuzu">
+	Huuuuh?
+	Are you sure about this?
+	</text>
+
+	<right char="Atsuro" emotion="neutral" />
+	<text name="Atsuro">
+	You don't get it, Yoohoo!
+	Naoya's my teacher.
+	</text>
+</c1>
+
+<c2>
+	<text name="Yuzu">
+	He's right.
+	C'mon, Atsuro, stop it!
+	</text>
+
+	<right char="Atsuro" emotion="neutral" />
+	<text name="Atsuro">
+	You guys don't get it!
+	Naoya's my teacher.
+	</text>
+</c2>	
+</choice>
+
+<text name="Atsuro">
+If he took the time to call
+me up and give it to me...
+</text>
+
+<right emotion="excited" />
+<text name="Atsuro">
+That means he wants me to
+break his protection scheme!
+It's like a friendly greeting!
+</text>
+
+<left emotion="surprised" />
+<text name="Yuzu">
+That doesn't make any sense!
+Why can't he say "hello"
+like a normal person?
+</text>
+
+<right emotion="happy" />
+<text name="Atsuro">
+Let's take a look here...
+What's his encryption
+scheme this time?
+</text>
+
+<text name="Atsuro">
+...Heh heh heh![symbol: music]
+Isn't this intense!?
+</text>
+
+<left emotion="angry" />
+<text name="Yuzu">
+No! Only someone like you
+would find this exciting,
+Asturo!
+</text>
+
+<sound link="COMP BEEP" />
+<image link="COMPS - Cracked" />
+<right emotion="neutral" />
+<text name="Atsuro">
+Hrrrrmmmm...
+Ah, there we go!
+</text>
+
+<text name="Atsuro">
+You can at least check your
+mail or now. Here, these
+are yours.
+</text>
+
+<text> Atsuro gave you a COMP! </text>
+
+<comment content="mail window opens here. How do you want to handle this? 
+You need to read the whole mail before proceeding." />
+
+<comment content="image is also deactvated once you come back." />
+
+<left char="Yuzu" emotion="sad" />
+<text name="Yuzu">
+At around 16:00 in
+Shibuya-ku Aoyama, a man...
+will be killed!?
+</text>
+
+<text name="Yuzu">
+He'll be attacked by some carnivorous beast...
+</text>
+
+<text name="Yuzu">
+...!?
+What kind of news is this?
+That's so creepy...
+</text>
+
+<choice direction="right" 
+c1="Yeah, that is creepy."
+c2="It's just the news."
+c3="The text is strange.">
+
+<c1>
+	<right emotion="sad" />
+	<text name="Yuzu">
+	I know, right!? The way it's
+	written so offhandedly just
+	makes it even creepier...
+	</text>
+</c1>
+
+<c2>
+	<left emotion="surprised" />
+	<text name="Yuzu">
+	Huh!? No, it's totally freaky!
+	And the way it's so casual
+	makes it even freakier!
+	</text>
+	<left emotion="sad" />
+</c2>
+
+<c3>
+	<left emotion="surprised" />
+	<text name="Yuzu">
+	Hey!
+	That' not the point!
+	</text>
+	<left emotion="sad" />
+</c3>
+
+</choice>
+
+<right char="Atsuro" emotion="sad" />
+<text name="Atsuro">
+It also said there'll be a
+blackout in Tokyo today...
+What is this?
+</text>
+
+<text name="Atsuro">
+It says it's today's news...
+But none of this has happened
+today.
+</text>
+
+<right emotion="excited" />
+<text name="Atsuro">
+Why would Naoya put a lock on
+this...? Ooh, maybe it's code
+for something!
+</text>
+
+<right emotion="serious" />
+<text name="Atsuro">
+Aoyama, Aoyama... Hmm...
+Naoya's place is near there,
+but is that important...?
+</text>
+
+<left emotion="scared" />
+<text name="Yuzu">
+That's enough!
+This is way too creepy!
+</text>
+
+<left emotion="angry" />
+<text name="Yuzu">
+I bet Naoya knew you would
+tinker with the COMPs and
+played a trick on us.
+</text>
+
+<right emotion="sad" />
+<text name="Atsuro">
+I don't know... He's amazingly
+smart, so I think he must have
+meant for this to happen.
+</text>
+
+<right emotion="serious" />
+<text name="Atsuro">
+Hmm... I can't figure it out
+from just this. I'll try the
+rest of these files, too.
+</text>
+
+<right emotion="neutral" />
+<left emotion="neutral" />
+  <text name="Atsuro">
+    I'm gonna go find somewhere I
+    can think. Go kill some time.
+    Oh, you can take the COMPs!
+  </text>
+
+<text name="Atsuro">
+Some of their functions still
+work, so you might as well try
+them out. See ya later, okay?
+</text>
+
+<right char="" />
+<text>
+Atsuro leaves the area to
+take a closer look into
+the COMP...
+</text>
+
+<right char="hero" emotion="neutral" />
+<pause />
+<left emotion="angry" />
+<text name="Yuzu">
+I bet it's all just a prank.
+Atsuro always acts like such a
+kid with stuff like this!
+</text>
+
+<left emotion="neutral" />
+<text name="Yuzu">
+Um... What should we do,
+Lan? Why don't we wanter
+around until Atsuro's done?
+</text>
+
+<text> You and Yuzu leave the 901... </text>
+<comment 
+content="both characters sweep out at the same time, and then it blacks out!" />
+
+</DSCC_Dialog>

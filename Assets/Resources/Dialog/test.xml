@@ -1,0 +1,18 @@
+<DSCC_Dialog>
+  <text name="Atsuro">
+    One step at a time.
+  </text>
+
+  <Lv1>
+    Test: Lv1
+    <Lv2>
+      <Lv20 />
+      <Lv21 />
+      Lv2, OK.
+      <Lv3>
+        
+      </Lv3>
+    </Lv2>
+  </Lv1>
+  
+</DSCC_Dialog>
