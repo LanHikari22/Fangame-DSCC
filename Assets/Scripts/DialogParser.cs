@@ -65,7 +65,7 @@ namespace Assets.Scripts
         {
             string name = null;
             if (el.Attribute("name") != null) name = el.Attribute("name").Value;
-            string content = el.Value;
+            string content = el.Value.Trim();
 
             return new TextNode(name, content);
         }

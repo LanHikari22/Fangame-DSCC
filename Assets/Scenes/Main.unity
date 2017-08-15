@@ -319,8 +319,27 @@ Prefab:
     - target: {fileID: 114744126239785254, guid: ec4ca13ef6e2a774f9e026821a2ca4c0,
         type: 2}
       propertyPath: m_Text
-      value: Hey, what's wrong? Are you lost? This place is pretty big, but I can
-        take you to the security office. I'm sure your parents will find you there.
+      value: Test.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114744126239785254, guid: ec4ca13ef6e2a774f9e026821a2ca4c0,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 224680852204382164, guid: ec4ca13ef6e2a774f9e026821a2ca4c0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224680852204382164, guid: ec4ca13ef6e2a774f9e026821a2ca4c0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114901629276908568, guid: ec4ca13ef6e2a774f9e026821a2ca4c0,
+        type: 2}
+      propertyPath: m_Text
+      value: Test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec4ca13ef6e2a774f9e026821a2ca4c0, type: 2}
@@ -936,7 +955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 2353002836f4e6c4185319e6d96f0cb8, type: 3}
+  m_Sprite: {fileID: 21300002, guid: b5298595cbc9edd4fbb51f3047a098ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
