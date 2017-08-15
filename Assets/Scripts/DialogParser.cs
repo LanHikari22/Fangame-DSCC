@@ -25,8 +25,10 @@ namespace Assets.Scripts
                         nodeQueue.Enqueue(handleText(el));
                         break;
                     case "left":
+                        nodeQueue.Enqueue(handleConfig(el, isLeft: true));
                         break;
                     case "right":
+                        nodeQueue.Enqueue(handleConfig(el, isLeft: false));
                         break;
                     default:
                         // Debug.Log(el);
@@ -37,6 +39,28 @@ namespace Assets.Scripts
             return nodeQueue;
         }
 
+        /**
+         * @param el        Left/Right node element to parse data from
+         * @param isLeft    Whether it's the character in the left side, or right side.
+         * @returns the instantiaated node as a DialogNode
+         */
+        private static DialogNode handleConfig(XElement el, bool isLeft)
+        {
+            string character = null;
+            if (el.Attribute("char") != null) character = el.Attribute("char").Value;
+            string emotion = null;
+            if (el.Attribute("emotion") != null) emotion = el.Attribute("emotion").Value;
+
+            if (isLeft)
+                return new LeftNode(character, emotion);
+            else
+                return new RightNode(character, emotion);
+        }
+
+        /**
+         * @param el        TextNode element to parse name/content from
+         * @return the instantiated node as a DialogNode.
+         */
         private static DialogNode handleText(XElement el)
         {
             string name = null;

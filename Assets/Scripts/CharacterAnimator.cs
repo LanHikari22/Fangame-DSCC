@@ -63,7 +63,7 @@ public class CharacterAnimator : MonoBehaviour {
 		// frameClock always advances! overflow, if you must.
 		frameClock++;
 
-		// sprite name without the animation tag: "_0" or "_1" gone.
+		// sprite name without the animation tag: "_0" or "_1".
 		var spriteName = "";
 		if (sr.sprite)
 			spriteName = sr.sprite.name.Substring (0, sr.sprite.name.Length - 2);
@@ -87,7 +87,6 @@ public class CharacterAnimator : MonoBehaviour {
 
 			// Since this is a new sprite, swapping must happen, unless this is the very first run. Trigger.
 			if (currSprite && triggerFlags != SWAPPING && isNewCharacter()) {
-				Debug.Log ("flags=" + triggerFlags);
 				savedTriggerFlags = triggerFlags;
 				triggerFlags = SWAPPING; // Don't execute any other animations for now.
 				t0_swapping = frameClock; // We're now starting the swapping animation!
@@ -199,13 +198,14 @@ public class CharacterAnimator : MonoBehaviour {
 
 	/**
 	 * searches array of sprites, checks if one of the sprites has, name, as its name, if so, return it.
+     * The name includes the spreadsheet. The format: <spreadsheet>_<name>_e<emotion>_n
 	 * @param name		the name to check sprites for. It should adhere to the naming format.
 	 * @return sprite with name @param name, or null
 	 */
-	Sprite searchSpriteArray (Sprite[] sprites, string name){
+	public static Sprite searchSpriteArray (Sprite[] sprites, string name){
 		Sprite output = null;
 		foreach (Sprite sprite in sprites) {
-			if (sprite.name == name) {
+            if (sprite.name == name) {
 				output = sprite;
 			}
 		}

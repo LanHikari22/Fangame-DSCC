@@ -153,7 +153,7 @@ It's a friendly nickname!
 </text>
 
 <text name="Atsuro">
-And it's not ust our class.
+And it's not just our class.
 Some of the teachers actually
 think your name is "Yoohoo."
 </text>
@@ -204,7 +204,7 @@ Naoya stood us up! Wait, what did
 he want you to give us?
 </text>
 
-<right char="hero" emotion="surprised" />
+<left char="Yuzu" emotion="surprised" />
 <text name="Yuzu">
 Here, take them.
 They were a pain to carry
@@ -596,7 +596,7 @@ take a closer look into
 the COMP...
 </text>
 
-<right char="hero" emotion="neutral" />
+<right char="Hero" emotion="neutral" />
 <pause />
 <left emotion="angry" />
 <text name="Yuzu">

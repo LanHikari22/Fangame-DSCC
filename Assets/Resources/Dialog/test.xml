@@ -1,18 +1,23 @@
 <DSCC_Dialog>
-  <text name="Atsuro">
-    One step at a time.
-  </text>
-
-  <Lv1>
-    Test: Lv1
-    <Lv2>
-      <Lv20 />
-      <Lv21 />
-      Lv2, OK.
-      <Lv3>
-        
-      </Lv3>
-    </Lv2>
-  </Lv1>
+  <left char="" /> <comment content="There's message lag it seems..." />
+  <left char="Atsuro" />
+  <right char="Kid"/>
+  <text name="Kid">
+    Umm...
+  </text>"
   
+  <left emotion="happy" />
+  <text name="Atsuro">
+    What's wrong? Are you lost?
+  </text>
+  
+  <right char="" emotion="" />
+
+  <text></text>
+  <left emotion="sad" />
+  <text name="Atsuro">
+    Hmm... He left.
+  </text>
+  
+
 </DSCC_Dialog>

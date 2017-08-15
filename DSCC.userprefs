@@ -1,10 +1,11 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DialogManager.cs">
+﻿<Properties StartupItem="DSCC.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialog_Nodes\RightNode.cs">
     <Files>
-      <File FileName="Assets\Scripts\ChatboxController.cs" Line="12" Column="6" />
-      <File FileName="Assets\Scripts\CharacterAnimator.cs" Line="90" Column="1" />
+      <File FileName="Assets\Scripts\ChatboxController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterAnimator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\DialogManager.cs" Line="4" Column="18" />
+      <File FileName="Assets\Scripts\Dialog_Nodes\RightNode.cs" Line="10" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

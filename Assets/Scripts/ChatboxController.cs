@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +16,12 @@ public class ChatboxController : MonoBehaviour {
     static Queue<char> dialog;
     // frameclock to adust speed of dialog. advances to no bounds!
     static uint frameClock = 0;
+  
     // constant determining the number of frames it takes to print a character. Speed determinator.
     static uint FRAMES_PER_CHAR = 3;
     // chatbox pause amount for inactivating and activating to set name
     static uint FRAMES_PER_NAMECHANGE = 20;
+
     // original location of the chatbox
     static Vector3 pos;
     // counter until chatbox wakes up. 0 is awake.
@@ -45,6 +48,23 @@ public class ChatboxController : MonoBehaviour {
     public static bool Ready()
     {
         return ready;
+    }
+
+    /**
+     * fills in the rest of the text from the queue
+     */
+    public static void skipText()
+    {
+        // if the dialog queue has anything, it needs to be handled 
+        while (dialog.Count != 0)
+        {
+            printChar(dialog.Dequeue());
+            
+            // ready to print more text!
+            if (dialog.Count == 0)
+                ready = true;
+        }
+
     }
 
     /**
@@ -94,6 +114,10 @@ public class ChatboxController : MonoBehaviour {
      */
     public static void print(string s)
     {
+        // there's nothing to print, really.
+        if (s == null || s == "")
+            return;
+
         if (!ready)
             throw new UnityException("Not yet ready to accept text");
         // We are now working to the best of our ability to deliver. Please wait.
@@ -148,7 +172,8 @@ public class ChatboxController : MonoBehaviour {
         if (dialog.Count != 0 && frameClock % FRAMES_PER_CHAR == 0)
         {
             printChar(dialog.Dequeue());
-            // only ready to accept more text if done printing.
+
+            // ready to print more text!
             if (dialog.Count == 0)
                 ready = true;
         }

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: 2353002836f4e6c4185319e6d96f0cb8
-timeCreated: 1502558867
+timeCreated: 1502766578
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NPCs_Kid_1
-    21300002: NPCs_Kid_0
-    21300004: NPCs_Heehoo_1
-    21300006: NPCs_Heehoo_0
+    21300000: NPCs_kid_eNEUTRAL_1
+    21300002: NPCs_kid_eNEUTRAL_0
+    21300004: NPCs_heehoo_eNEUTRAL_1
+    21300006: NPCs_heehoo_eNEUTRAL_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPCs_Kid_1
+      name: NPCs_kid_eNEUTRAL_1
       rect:
         serializedVersion: 2
         x: 8
@@ -117,7 +117,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NPCs_Kid_0
+      name: NPCs_kid_eNEUTRAL_0
       rect:
         serializedVersion: 2
         x: 144
@@ -131,7 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NPCs_Heehoo_1
+      name: NPCs_heehoo_eNEUTRAL_1
       rect:
         serializedVersion: 2
         x: 144
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NPCs_Heehoo_0
+      name: NPCs_heehoo_eNEUTRAL_0
       rect:
         serializedVersion: 2
         x: 280
