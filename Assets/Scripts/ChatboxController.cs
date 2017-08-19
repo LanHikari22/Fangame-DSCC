@@ -185,7 +185,6 @@ public class ChatboxController : MonoBehaviour {
      */
     private static string filterGameText(string s)
     {
-        Debug.Log("Executed: s=" + s);
         s = s.Trim();
         while(s.Contains("\t"))
         {
@@ -208,8 +207,6 @@ public class ChatboxController : MonoBehaviour {
         {
             s = s.Replace("\n ", "\n");
         }
-
-        if(s.Length > 30) Debug.Log("s[30]=" + s[30]);
 
         return s;
     }
@@ -281,8 +278,8 @@ public class ChatboxController : MonoBehaviour {
         // you can't have infinite choices for the player to choose from. That'd be dilematic to deal with.
         const int CHOICE_NUMBER_LIMIT = 3;
         // character length limits, it really needs to fit into a chatbox, y'know...
-        public const int HEADER_TEXT_CHAR_LIMIT = 30;
-        public const int CHOICE_TEXT_CHAR_LIMIT = 30;
+        public const int HEADER_TEXT_CHAR_LIMIT = 35;
+        public const int CHOICE_TEXT_CHAR_LIMIT = 35;
         // number of frames it takes to pop up chatbox window for choice making
         const uint FRAMES_PER_CHOICE_CHATBOX_POPUP = FRAMES_PER_NAMECHANGE;
         // color of headerText. used in the text component's rich text feature <color=HEADER_TEXT_COLOR>...</color>
@@ -312,7 +309,7 @@ public class ChatboxController : MonoBehaviour {
             if (headerText == null || choices == null)
                 throw new ArgumentNullException("The choice system must contain a headertext and choices!");
             if (choices.Length == 0 || choices.Length > CHOICE_NUMBER_LIMIT)
-                throw new ArgumentException("choices must be between 1 and " + CHOICE_NUMBER_LIMIT);
+                throw new ArgumentException("choices must be between 1 and " + CHOICE_NUMBER_LIMIT + " but got " + choices.Length);
             if (headerText.Length > HEADER_TEXT_CHAR_LIMIT)
                 throw new ArgumentException("headerText too big. Length must be <= " + HEADER_TEXT_CHAR_LIMIT);
             foreach(string choice in choices)
@@ -372,7 +369,6 @@ public class ChatboxController : MonoBehaviour {
                     hideChoiceCursor(); // in the off-event that it 
             }
 
-            if (choice != INVALID_CHOICE) Debug.Log("choice=" + choice);
             return choice;
         }
 

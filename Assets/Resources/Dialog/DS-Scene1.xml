@@ -168,7 +168,7 @@ you keep calling me that!
 Haha, it's working!
 </text>
 
-<choice direction="right" fallthrough="true" c1="Will you cut it out?" c2="Where's Noaya?">
+<choice direction="right" multi="true" c1="Will you cut it out?" c2="Where's Noaya?">
 
 <c1>
 	<left emotion="sad" />
@@ -177,7 +177,7 @@ Haha, it's working!
 	</text>
 </c1>
 
-<c2></c2>
+<c2 exit="true"></c2>
 
 </choice>
 

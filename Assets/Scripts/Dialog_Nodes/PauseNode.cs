@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Dialog_Nodes
 {
-    class PauseNode
+    class PauseNode : DialogNode
     {
     }
 }

@@ -61,10 +61,15 @@ namespace Assets.Scripts
             if (el.Attribute("c2") != null) c2 = el.Attribute("c2").Value;
             string c3 = null;
             if (el.Attribute("c3") != null) c3 = el.Attribute("c3").Value;
+            string fallthroughStr = null;
+            if (el.Attribute("fallthrough") != null) fallthroughStr = el.Attribute("fallthrough").Value.ToLower();
+            bool fallthrough = fallthroughStr == "true";
+
             Queue<DialogNode>[] potentialBranches = new Queue<DialogNode>[3];
             // get potential branches, could be 3 or less.
             int branchCursor = 0;
             List<string> branchNamesChecklist = new List<string> { "c1", "c2", "c3"}; // each can only appear ONCE
+            int exitBranchIndex = -1;
             foreach (XElement element in el.Elements())
             {
                 var elName = element.Name.ToString();
@@ -76,6 +81,15 @@ namespace Assets.Scripts
                 if (branchNamesChecklist.Contains(elName))
                 {
                     branchNamesChecklist.Remove(elName); // check this one off. Shouldn't parse another one...
+                    // Check if this node is an exit node. There should be only one!
+                    if (element.Attribute("exit") != null && element.Attribute("exit").Value.ToLower() == "true")
+                    {
+                        if (exitBranchIndex != -1)
+                            throw new UnityException("Cannot have two choices being assigned exit!");
+                        exitBranchIndex = branchCursor;
+                    }
+
+                    // parse parse parse!
                     potentialBranches[branchCursor++] = Parse(element);
                 }
             }
@@ -84,7 +98,7 @@ namespace Assets.Scripts
             for (int i = 0; i < branchCursor; i++)
                 branches[i] = potentialBranches[i];
 
-            return new ChoiceNode(direction, c1, c2, c3, branches);
+            return new ChoiceNode(direction, c1, c2, c3, branches, fallthrough, exitBranchIndex);
         }
 
         /**

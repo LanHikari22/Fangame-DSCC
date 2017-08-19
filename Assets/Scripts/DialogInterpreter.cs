@@ -118,16 +118,56 @@ namespace Assets.Scripts
                 if(status == STATUS_CHOICE_PROMPT && ChatboxController.Ready())
                 {
                     // yay! ChatboxController got an answer!
-                    // Let's add the queue of the branch into the main queue to be executed!
-                    insertBranchIntoQueue(processedNode as ChoiceNode, ChatboxController.retrievePlayerChoice());
+                    var cn = processedNode as ChoiceNode;
+                    int choice = ChatboxController.retrievePlayerChoice();
+
+                    // is multi enabled? If so, we gotta repeat until we run out of choices!
+                    // (unless this is an exit choice)
+                    if (cn.multi && cn.exitBranchIndex != choice)
+                        insertSubChoiceNodeIntoQueue(cn, choice);
+
+                    // Let's add the queue of the branch into the start of the main queue to be executed next!
+                    insertBranchIntoQueue(cn, choice);
+                    
 
                     // Cool! Now just have the new instructions execute!
                     status = STATUS_READY;
-                    
                 }
             }
 
             return status;
+        }
+
+        /**
+         * removes the previous choice from the ChoiceNode and inserts it back into the DialogNode queue
+         * to be executed next step.
+         */
+        private void insertSubChoiceNodeIntoQueue(ChoiceNode node, int choice)
+        {
+            // create subnode
+            ChoiceNode subnode;
+            var choices = new string[node.choices.Length - 1];
+            if (choices.Length == 0)
+                return; // no subnode exists
+
+            var branches = new Queue<DialogNode>[node.branches.Length - 1];
+            int addCursor = 0;
+            for(int i = 0; i<node.choices.Length; i++)
+            {
+                if (choice == i)
+                    continue;
+                choices[addCursor] = node.choices[i];
+                branches[addCursor++] = node.branches[i];
+
+            }
+            subnode = new ChoiceNode(node.direction, choices, branches, node.multi, node.exitBranchIndex);
+
+            // insert subnode at the beginning of dialogNodes
+            var newQueue = new Queue<DialogNode>();
+            newQueue.Enqueue(subnode);
+            while (dialogNodes.Count != 0)
+                newQueue.Enqueue(dialogNodes.Dequeue());
+            dialogNodes = newQueue;
         }
 
         /**
