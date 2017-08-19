@@ -3,7 +3,6 @@ Library/
 obj/
 .vs/
 ProjectSettings/
-*.meta
 *.csproj
 *.userprefs
 *.sln

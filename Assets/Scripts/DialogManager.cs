@@ -21,8 +21,8 @@ public class DialogManager : MonoBehaviour {
 		chars [1] = GameObject.Find ("R-Character");
 
         //Load xml to be handled by parser and obtain DialogNode queue
-        //var xml = Resources.Load("Dialog/DS-Scene1").ToString();
-        var xml = Resources.Load("Dialog/test").ToString();
+        var xml = Resources.Load("Dialog/DS-Scene1").ToString();
+        //var xml = Resources.Load("Dialog/test").ToString();
 
         XDocument xdoc = XDocument.Parse(xml);
         dialogNodes = DialogParser.Parse(xdoc.Element("DSCC_Dialog"));

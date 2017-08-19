@@ -293,9 +293,9 @@ public class ChatboxController : MonoBehaviour {
         // scaling needed to increment by 1 unit globally is TRANSFORM_SCALING*1.
         const float TRANSFORM_SCALE = 1.408654f;
         // First line is highest in the chatbox! Next lines are lower by a multiple of LNE_HEIGHT
-        const float FIRST_CHOICE_Y_POS = TRANSFORM_SCALE * -160;
+        const float FIRST_CHOICE_Y_POS = TRANSFORM_SCALE * -155;
         // height of a chatbox line of text. Used to move from a line to another.
-        const float CHOICE_HEIGHT = TRANSFORM_SCALE * 30;
+        const float CHOICE_HEIGHT = TRANSFORM_SCALE * 25;
         // used at the start to indicate that the player didn't interact with the UI yet.
         const int INVALID_PLAYER_CURSOR_POSITION = -1;
 
