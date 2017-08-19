@@ -1,4 +1,11 @@
 Temp/
 Library/
+obj/
+.vs/
+ProjectSettings/
+*.meta
 *.csproj
 *.userprefs
+*.sln
+git config core.exclusesfile ~/.gitignore
+git rm -r --cached .
