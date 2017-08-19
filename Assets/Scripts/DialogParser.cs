@@ -61,9 +61,9 @@ namespace Assets.Scripts
             if (el.Attribute("c2") != null) c2 = el.Attribute("c2").Value;
             string c3 = null;
             if (el.Attribute("c3") != null) c3 = el.Attribute("c3").Value;
-            string fallthroughStr = null;
-            if (el.Attribute("fallthrough") != null) fallthroughStr = el.Attribute("fallthrough").Value.ToLower();
-            bool fallthrough = fallthroughStr == "true";
+            string multiStr = null;
+            if (el.Attribute("multi") != null) multiStr = el.Attribute("multi").Value.ToLower();
+            bool multi = multiStr == "true";
 
             Queue<DialogNode>[] potentialBranches = new Queue<DialogNode>[3];
             // get potential branches, could be 3 or less.
@@ -98,7 +98,7 @@ namespace Assets.Scripts
             for (int i = 0; i < branchCursor; i++)
                 branches[i] = potentialBranches[i];
 
-            return new ChoiceNode(direction, c1, c2, c3, branches, fallthrough, exitBranchIndex);
+            return new ChoiceNode(direction, c1, c2, c3, branches, multi, exitBranchIndex);
         }
 
         /**

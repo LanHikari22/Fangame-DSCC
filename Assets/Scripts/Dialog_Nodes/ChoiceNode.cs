@@ -60,7 +60,6 @@ namespace Assets.Scripts.Dialog_Nodes
             this.branches = branches;
             this.multi = multi;
             this.exitBranchIndex = exitBranchIndex;
-            Debug.Log("multi=" + multi);
         }
 
 
