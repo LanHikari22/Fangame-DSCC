@@ -1,23 +1,32 @@
 <DSCC_Dialog>
   <left char="" /> <comment content="There's message lag it seems..." />
-  <left char="Atsuro" />
-  <right char="Kid"/>
-  <text name="Kid">
-    Umm...
-  </text>"
-  
-  <left emotion="happy" />
-  <text name="Atsuro">
-    What's wrong? Are you lost?
-  </text>
-  
-  <right char="" emotion="" />
+  <left char="Yuzu" emotion="neutral" />
+  <right char="Atsuro" />
+  <choice direction="left" c1="Yeah." c2="Not really.">
 
-  <text></text>
-  <left emotion="sad" />
-  <text name="Atsuro">
-    Hmm... He left.
-  </text>
-  
+    <c1>
+      <right emotion="excited" />
+      <text name="Atsuro">
+        Ah, that's the {HeroName}
+        I know! Young guys like us
+        need to be full of energy!
+      </text>
 
+      <right emotion="happy" />
+      <text name="Atsuro">
+        Still, I couldn't think of
+        anything to do, so I spent all
+        day on my laptop. Haha!
+      </text>
+    </c1>
+
+    <c2>
+      <left emotion="neutral" />
+      <pause />
+      <right emotion="neutral" />
+      <text name="Atsuro">
+        Uh-oh... Did something happen?
+      </text>
+    </c2>
+  </choice>
 </DSCC_Dialog>

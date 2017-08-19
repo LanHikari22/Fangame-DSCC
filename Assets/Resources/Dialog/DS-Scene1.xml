@@ -131,7 +131,7 @@ Don't call me "Yoohoo"
 </text>
 
 <text name="Yuzu">
-My name is [Y:Yuzu]!
+My name is &lt;color=yellow&gt;Yuzu&lt;/color&gt;!
 Sheesh, will you stop calling
 me that stupid nickname!?
 </text>
@@ -176,6 +176,8 @@ Haha, it's working!
 	He keeps calling me "Yoohoo"...!
 	</text>
 </c1>
+
+<c2></c2>
 
 </choice>
 

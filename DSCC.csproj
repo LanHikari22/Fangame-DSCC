@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CharacterAnimator.cs" />
     <Compile Include="Assets\Scripts\ChatboxController.cs" />
+    <Compile Include="Assets\Scripts\DialogCharacter.cs" />
     <Compile Include="Assets\Scripts\DialogInterpreter.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Dialog_Nodes\ChoiceNode.cs" />
@@ -99,11 +100,13 @@
     <Compile Include="Assets\Scripts\Dialog_Nodes\RightNode.cs" />
     <Compile Include="Assets\Scripts\Dialog_Nodes\SoundNode.cs" />
     <Compile Include="Assets\Scripts\Dialog_Nodes\TextNode.cs" />
+    <Compile Include="Assets\Scripts\Game_Exceptions\NotReadyException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Dialog\DS-Scene1.xml" />
     <None Include="Assets\Resources\Dialog\test.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

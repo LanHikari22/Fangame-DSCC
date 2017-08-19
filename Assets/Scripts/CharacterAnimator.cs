@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Assets.Scripts;
+
 public class CharacterAnimator : MonoBehaviour {
 
 	// clocked used for animations
@@ -33,7 +35,7 @@ public class CharacterAnimator : MonoBehaviour {
 
 	/* Animation Triggering */
 	// trigger flags determine what animations should be running at any given instant
-	uint triggerFlags;
+	public uint triggerFlags;
 	// used to 0store previous state for animations that pause everything else until they're complete
 	uint savedTriggerFlags;
 	const uint BLINKING = 0x01;
@@ -79,8 +81,8 @@ public class CharacterAnimator : MonoBehaviour {
 			// since Resources.LoadAll() returns an array, the array is searched for the corresponding closed/open eyes variation of the sprite.
 			string spritesheet = sr.sprite.name.Substring (0, sr.sprite.name.IndexOf ("_")); // <spritesheet>_<name>_e<emotion>_<n> -> <spritesheet>
 			var characterSprites = Resources.LoadAll<Sprite> ("Sprites/" + spritesheet);
-			openEyesSprite = searchSpriteArray (characterSprites, spriteName + "_1"); // "*_0" or *_1".
-			closedEyesSprite = searchSpriteArray (characterSprites, sr.sprite.name.Substring (0, sr.sprite.name.Length - 2) + "_0");
+			openEyesSprite = DialogCharacter.searchSpriteArray (characterSprites, spriteName + "_1"); // "*_0" or *_1".
+			closedEyesSprite = DialogCharacter.searchSpriteArray (characterSprites, sr.sprite.name.Substring (0, sr.sprite.name.Length - 2) + "_0");
 
 			// take new time reference for the blinkingAnimation.
 			t0_blinking = frameClock;
@@ -164,52 +166,44 @@ public class CharacterAnimator : MonoBehaviour {
 			triggerFlags = savedTriggerFlags;
 		}
 	}
-		
 
-	/**
+
+    public static bool NoSwappingIsHappening()
+    {
+        var lc = GameObject.Find("L-Character").GetComponent<CharacterAnimator>();
+        var rc = GameObject.Find("R-Character").GetComponent<CharacterAnimator>();
+
+        return (lc.triggerFlags != SWAPPING) && (rc.triggerFlags != SWAPPING);
+    }
+
+    /**
 	 * Checks whether sr.sprite is a different character from currSprite in accordinace to the naming format:
 	 * "<spritesheet>_<name>_e<emotion>_<n>".
 	 * It should be the same,if "<spritesheet>_<name>" is identical.
 	 * @return true if sr.sprite has the same character as currSprite. false otherwise.
 	 */
-	bool isNewCharacter ()
-	{
-		bool sameCharacter = true; // innocent until proven guilty
-		var sn = sr.sprite.name;
-		var snFirst_ = sn.IndexOf ("_");
-		var snSecond_ = sn.IndexOf ("_", snFirst_ +1);
-		var rFirst_ = currSprite.name.IndexOf ("_"); // first '_' in recordedSprite
-		var rSecond_ = currSprite.name.IndexOf ("_", rFirst_ +1);
+    bool isNewCharacter()
+    {
+        bool sameCharacter = true; // innocent until proven guilty
+        var sn = sr.sprite.name;
+        var snFirst_ = sn.IndexOf("_");
+        var snSecond_ = sn.IndexOf("_", snFirst_ + 1);
+        var rFirst_ = currSprite.name.IndexOf("_"); // first '_' in recordedSprite
+        var rSecond_ = currSprite.name.IndexOf("_", rFirst_ + 1);
 
-		// If spritesheet is different, it's guaranteed to be a different character.
-		// <spritesheet>_<name>_e<emotion>_<n> -> <spritesheet>
-		string spritesheet = sn.Substring (0, snFirst_);
-		string rSpritesheet = currSprite.name.Substring(0,rFirst_); // [<spritesheet>]_<name>_e<emotion>_<n>
-		sameCharacter &= spritesheet == rSpritesheet;
+        // If spritesheet is different, it's guaranteed to be a different character.
+        // <spritesheet>_<name>_e<emotion>_<n> -> <spritesheet>
+        string spritesheet = sn.Substring(0, snFirst_);
+        string rSpritesheet = currSprite.name.Substring(0, rFirst_); // [<spritesheet>]_<name>_e<emotion>_<n>
+        sameCharacter &= spritesheet == rSpritesheet;
 
-		// if <name> is different, it's also a different character.
-		// <spritesheet>_<name>_e<emotion>_<n> -> <name>
-		string name = sr.sprite.name.Substring (snFirst_ +1, snSecond_ - snFirst_); // <spritesheet>_<name>_e<emotion>_<n> -> <spritesheet>
-		string rName = currSprite.name.Substring(rFirst_ +1, rSecond_ - rFirst_); //			   01234567890123456789012345678901234
-		sameCharacter &= name == rName;
+        // if <name> is different, it's also a different character.
+        // <spritesheet>_<name>_e<emotion>_<n> -> <name>
+        string name = sr.sprite.name.Substring(snFirst_ + 1, snSecond_ - snFirst_); // <spritesheet>_<name>_e<emotion>_<n> -> <spritesheet>
+        string rName = currSprite.name.Substring(rFirst_ + 1, rSecond_ - rFirst_); //			   01234567890123456789012345678901234
+        sameCharacter &= name == rName;
 
-		return !sameCharacter; // output = True: same spreadsheet, same name.
-	}		
-
-	/**
-	 * searches array of sprites, checks if one of the sprites has, name, as its name, if so, return it.
-     * The name includes the spreadsheet. The format: <spreadsheet>_<name>_e<emotion>_n
-	 * @param name		the name to check sprites for. It should adhere to the naming format.
-	 * @return sprite with name @param name, or null
-	 */
-	public static Sprite searchSpriteArray (Sprite[] sprites, string name){
-		Sprite output = null;
-		foreach (Sprite sprite in sprites) {
-            if (sprite.name == name) {
-				output = sprite;
-			}
-		}
-		return output;
-	}
+        return !sameCharacter; // output = True: same spreadsheet, same name.
+    }
 
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3a44ac79a50b0604e83e068d163b11a2
-timeCreated: 1502769970
+timeCreated: 1503135357
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,8 +12,8 @@ TextureImporter:
     21300010: Atsuro_atsuro_eHAPPY_1
     21300012: Atsuro_atsuro_eSAD_0
     21300014: Atsuro_atsuro_eSAD_1
-    21300016: Atsuro_atsuro_eWOW_0
-    21300018: Atsuro_atsuro_eWOW_1
+    21300016: Atsuro_atsuro_eEXCITED_0
+    21300018: Atsuro_atsuro_eEXCITED_1
     21300020: Atsuro_atsuro_eMAD_0
     21300022: Atsuro_atsuro_eMAD_1
     21300024: Atsuro_atsuro_eTROUBLED_0
@@ -225,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atsuro_atsuro_eWOW_0
+      name: Atsuro_atsuro_eEXCITED_0
       rect:
         serializedVersion: 2
         x: 416
@@ -239,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atsuro_atsuro_eWOW_1
+      name: Atsuro_atsuro_eEXCITED_1
       rect:
         serializedVersion: 2
         x: 280

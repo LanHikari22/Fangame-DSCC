@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222653465016074114}
   - component: {fileID: 114704649807546162}
   - component: {fileID: 114160634053251454}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Chatbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,8 +39,25 @@ GameObject:
   - component: {fileID: 224680852204382164}
   - component: {fileID: 222306992332732164}
   - component: {fileID: 114744126239785254}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1362106025691168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224052177226373038}
+  - component: {fileID: 222408913530240006}
+  - component: {fileID: 114548711871633472}
+  m_Layer: 8
+  m_Name: Choice Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +73,7 @@ GameObject:
   - component: {fileID: 224102023032453318}
   - component: {fileID: 222710302227747068}
   - component: {fileID: 114901629276908568}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,6 +91,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82abfc7a4a11124ea7d728fba3f1bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114548711871633472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362106025691168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 4457426157a51ca41807337d8fda375c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114704649807546162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,11 +177,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Here, take them.
-
-    They were a pain to carry
-
-    around in my bag, too.'
+  m_Text: Did you eat breakfast?
 --- !u!114 &114901629276908568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,13 +210,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yuzu
+  m_Text: Test
 --- !u!222 &222306992332732164
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308285800300818}
+--- !u!222 &222408913530240006
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362106025691168}
 --- !u!222 &222653465016074114
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -189,6 +235,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1608501015449674}
+--- !u!224 &224052177226373038
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362106025691168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224837149834566146}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -23.3, y: 19.800003}
+  m_SizeDelta: {x: 414, y: 36}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224102023032453318
 RectTransform:
   m_ObjectHideFlags: 1
@@ -200,7 +264,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224837149834566146}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -218,7 +282,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224837149834566146}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -235,6 +299,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 224052177226373038}
   - {fileID: 224102023032453318}
   - {fileID: 224680852204382164}
   m_Father: {fileID: 0}
@@ -242,6 +307,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9999989, y: -152}
+  m_AnchoredPosition: {x: 1, y: -148}
   m_SizeDelta: {x: 499, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
